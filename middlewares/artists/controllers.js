@@ -10,6 +10,11 @@ const artistsControllers = {
       artists,
     });
   },
+  addArtist: async (req, res) => {
+    res.status(200).send({
+      message: "Add artist",
+    });
+  },
 };
 
 module.exports = artistsControllers;
