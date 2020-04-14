@@ -2,27 +2,26 @@ const mongoose = require("../../config/mongoose");
 const AutoIncrement = require("mongoose-sequence")(mongoose);
 const Schema = mongoose.Schema;
 
-// User schema
-const UserSchema = Schema(
+// Artist schema
+const ArtistSchema = Schema(
   {
+    slug: {
+      type: String,
+      required: [true, "Slug is required"],
+    },
     name: {
       type: String,
       required: [true, "Name is required"],
       min: [2, "Name is too short"],
       max: [100, "Name is too long"],
     },
-    email: {
+    photo: {
       type: String,
-      required: [true, "Email is required"],
-      min: [2, "Email is too short"],
+      required: [true, "Photo is required"],
     },
-    salt: {
-      type: String,
-      required: true,
-    },
-    password: {
-      type: String,
-      required: [true, "Password is required"],
+    biography: {
+      about: String,
+      exhibitions: [String],
     },
   },
   {
@@ -33,12 +32,12 @@ const UserSchema = Schema(
 // plug the AutoIncrement plugin into the schema to create auto incremented id
 // id is different with _id
 // inc_field is to track which id to increment
-UserSchema.plugin(AutoIncrement, {
-  id: "users_counter",
+ArtistSchema.plugin(AutoIncrement, {
+  id: "artists_counter",
   inc_field: "id",
 });
 
-// User model => users collection
-const User = mongoose.model("User", UserSchema);
+// Artist model => artist collection
+const Artist = mongoose.model("Artist", ArtistSchema);
 
-module.exports = User;
+module.exports = Artist;
