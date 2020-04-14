@@ -1,18 +1,17 @@
-# Project Example: Auth with Express
+# Nawaart Backend
 
-[![Travis CI](https://travis-ci.org/mhaidarh/project-auth-express.svg?branch=master)](https://travis-ci.org/github/mhaidarh/project-auth-express)
-
-- Visit the live API: https://api.haidar.dev
-- Visit the live documentation: https://api.haidar.dev/docs
+- Visit the live API: https://nawaart-api.jonathannicolas.dev
+- Visit the live documentation: https://nawaart-api.jonathannicolas.dev/docs
 
 ## Links
 
-- Production: https://api.haidar.dev
-  - Docs: https://api.haidar.dev/docs
-- Heroku: https://api-haidar-dev.herokuapp.com
-  - Dashboard: https://dashboard.heroku.com/apps/api-haidar-dev
-- Google App Engine: https://api-haidar-dev.REGION.r.appspot.com
+- Heroku: https://nawaart-backend.herokuapp.com
+  - Dashboard: https://dashboard.heroku.com/apps/nawaart-backend
+  - MongoDB: mongodb://mlab.com/database-url
 - Amazon EBS: https://api-haidar-dev.example.com
+  - MongoDB: mongodb://mlab.com/database-url
+- Amazon EC2: https://api-haidar-dev.example.com
+  - MongoDB: mongodb://amazon.com/database-url
 
 ## Stack
 
@@ -29,7 +28,7 @@
 - MongoDB, Mongoose, and mLab
   - Later: MySQL, Sequelize, and MySQL instance
 - Heroku
-  - Later: Amazon EBS
+  - Later: Amazon EBS and Amazon EC2
   - Later: Google App Engine
 - Cloudflare
 - Uniregistry
@@ -56,6 +55,8 @@
 
 Swagger URL: https://api.haidar.dev/docs
 
+### Users
+
 | Endpoint              | HTTP     | Description                    |
 | --------------------- | -------- | ------------------------------ |
 | `/`                   | `GET`    | Get index                      |
@@ -69,6 +70,36 @@ Swagger URL: https://api.haidar.dev/docs
 | `/users`              | `DELETE` | Delete all users               |
 | `/users/:id`          | `GET`    | Get one user by id             |
 | `/users/:id`          | `DELETE` | Delete one user by id          |
+
+
+### Artists
+
+| Endpoint         | HTTP     | Description           |
+| ---------------- | -------- | --------------------- |
+| `/artists`       | `GET`    | Get all artists       |
+| `/artists`       | `POST`   | Add new artist        |
+| `/artists`       | `DELETE` | Delete all artists    |
+| `/artists/:slug` | `GET`    | Get artist by slug    |
+| `/artists/:slug` | `DELETE` | Delete artist by slug |
+
+
+```json
+{
+  "_id": ObjectId,
+  "id": 1,
+  "slug": "adha-joe",
+  "name": "Adha Joe",
+  "photo": "https://exampple.com/images/adha-joe.jpg",
+  "biography": {
+    "about": "Even Adha is an autodidact artist and has never joined any art institution, he has been interested with art and started to paint since he was very young. In the beginning, Adha started to learn many kind of arts in various media, then finally he decided to focus on painting. For Adha, to paint is to express himself, as for him arts is the bridge to communicate to the audiences.",
+    "exhibitions": [
+      "2018 “Perupa Muda#3 Ring Road”, Sangkring Art Space, Yogyakarta",
+      "2018 “Imagine Beauty”, Sunrise Art Gallery & Arcade, Fairmont Hotel, Jakarta",
+      "2018 “Imagine Beauty”, Sunrise Art Gallery & Arcade, Fairmont Hotel, Jakarta"
+    ]
+  }
+}
+```
 
 ## Scripts
 
