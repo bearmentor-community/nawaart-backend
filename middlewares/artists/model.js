@@ -20,8 +20,14 @@ const ArtistSchema = Schema(
       required: [true, "Photo is required"],
     },
     biography: {
-      about: String,
-      exhibitions: [String],
+      about: {
+        type: String,
+        required: [true, "About is required"],
+      },
+      exhibitions: {
+        type: [String],
+        required: [true, "Exhibitions are required"],
+      },
     },
   },
   {

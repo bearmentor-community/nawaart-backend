@@ -10,27 +10,25 @@ const artistsControllers = {
       artists,
     });
   },
-  addArtist: async (req, res) => {
-    const artist = await Artist.create({
-      slug: "aung-ko",
-      name: "Aung Ko",
-      photo:
-        "https://rivergallerymyanmar.com/public/storage/artists/November2019/Tu7zFZyISCjGsfMbB7YB.jpg",
-      biography: {
-        about:
-          "Born in Htone Bo, Myanmar in 1980.2002 Educated from University of Culture, Yangon.",
-        exhibitions: [
-          "2018 “Perupa Muda#3 Ring Road”, Sangkring Art Space, Yogyakarta",
-          "2018 “Imagine Beauty”, Sunrise Art Gallery & Arcade, Fairmont Hotel, Jakarta",
-          "2018 “Imagine Beauty”, Sunrise Art Gallery & Arcade, Fairmont Hotel, Jakarta",
-        ],
-      },
-    });
 
-    res.status(200).send({
-      message: "Add artist",
-      artist,
-    });
+  addArtist: async (req, res) => {
+    try {
+      const newArtist = {
+        ...req.body,
+        slug: req.body.name.split(" ").join("-").toLowerCase(),
+      };
+
+      const artist = await Artist.create(newArtist);
+
+      res.status(200).send({
+        message: "Add artist",
+        artist,
+      });
+    } catch (error) {
+      res.status(400).send({
+        error,
+      });
+    }
   },
 };
 
