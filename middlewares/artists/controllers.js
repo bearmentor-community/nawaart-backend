@@ -48,12 +48,23 @@ const artistsControllers = {
     try {
       const slug = req.params.slug;
 
-      const artist = await Artist.findOne({
-        slug,
-      });
+      const artist = await Artist.findOne({ slug });
 
       res.status(200).send({
         artist,
+      });
+    } catch (error) {
+      res.status(400).send({
+        error,
+      });
+    }
+  },
+  deleteOneBySlug: async (req, res) => {
+    try {
+      const slug = req.params.slug;
+      const result = await Artist.deleteOne({ slug });
+      res.status(200).send({
+        result,
       });
     } catch (error) {
       res.status(400).send({
