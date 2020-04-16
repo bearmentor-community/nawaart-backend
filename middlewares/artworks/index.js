@@ -3,6 +3,7 @@ const router = express.Router();
 
 const artworks = require("./controllers");
 
+router.post("/seed", artworks.seed);
 router.get("/", artworks.getAll);
 router.post("/", artworks.add);
 router.delete("/", artworks.deleteAll);

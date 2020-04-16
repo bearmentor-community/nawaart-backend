@@ -30,7 +30,7 @@ const ArtworkSchema = Schema(
 );
 
 ArtworkSchema.plugin(AutoIncrement, {
-  id: "Artworks_counter",
+  id: "artworks_counter",
   inc_field: "id",
 });
 
