@@ -101,6 +101,26 @@ Swagger URL: https://api.haidar.dev/docs
 }
 ```
 
+### Artworks
+
+| Endpoint          | HTTP     | Description            |
+| ----------------- | -------- | ---------------------- |
+| `/artworks`       | `GET`    | Get all artworks       |
+| `/artworks`       | `POST`   | Add new artwork        |
+| `/artworks`       | `DELETE` | Delete all artworks    |
+| `/artworks/:slug` | `GET`    | Get artwork by slug    |
+| `/artworks/:slug` | `DELETE` | Delete artwork by slug |
+
+
+```json
+{
+  "artist": ObjectId,
+  "title": "Let It Grow",
+  "slug": "let-it-grow",
+  "image": "https://example.com/images/let-it-grow.jpg"
+}
+```
+
 ## Scripts
 
 ### Setup Environment Variables
