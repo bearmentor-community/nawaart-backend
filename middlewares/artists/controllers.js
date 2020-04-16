@@ -11,7 +11,7 @@ const artistsControllers = {
     });
   },
 
-  addArtist: async (req, res) => {
+  add: async (req, res) => {
     try {
       const newArtist = {
         ...req.body,
@@ -36,6 +36,24 @@ const artistsControllers = {
       await Artist.deleteMany();
       res.status(200).send({
         message: "Deleted all artists",
+      });
+    } catch (error) {
+      res.status(400).send({
+        error,
+      });
+    }
+  },
+
+  getOneBySlug: async (req, res) => {
+    try {
+      const slug = req.params.slug;
+
+      const artist = await Artist.findOne({
+        slug,
+      });
+
+      res.status(200).send({
+        artist,
       });
     } catch (error) {
       res.status(400).send({

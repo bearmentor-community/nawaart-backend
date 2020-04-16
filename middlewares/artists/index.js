@@ -6,7 +6,8 @@ const artists = require("./controllers");
 // app.js:
 // app.use('/artists', artistsMiddleware)
 router.get("/", artists.getAll);
-router.post("/", artists.addArtist);
+router.post("/", artists.add);
 router.delete("/", artists.deleteAll);
+router.get("/:slug", artists.getOneBySlug);
 
 module.exports = router;
