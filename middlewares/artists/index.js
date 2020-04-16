@@ -7,5 +7,6 @@ const artists = require("./controllers");
 // app.use('/artists', artistsMiddleware)
 router.get("/", artists.getAll);
 router.post("/", artists.addArtist);
+router.delete("/", artists.deleteAll);
 
 module.exports = router;

@@ -30,6 +30,19 @@ const artistsControllers = {
       });
     }
   },
+
+  deleteAll: async (req, res) => {
+    try {
+      await Artist.deleteMany();
+      res.status(200).send({
+        message: "Deleted all artists",
+      });
+    } catch (error) {
+      res.status(400).send({
+        error,
+      });
+    }
+  },
 };
 
 module.exports = artistsControllers;
