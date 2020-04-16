@@ -1,7 +1,6 @@
 const Artist = require("./model");
 
 const artistsControllers = {
-  // GET ALL ARTISTS
   getAll: async (req, res) => {
     const artists = await Artist.find();
 
@@ -59,6 +58,7 @@ const artistsControllers = {
       });
     }
   },
+
   deleteOneBySlug: async (req, res) => {
     try {
       const slug = req.params.slug;

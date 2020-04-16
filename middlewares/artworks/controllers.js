@@ -1,28 +1,27 @@
-const Artist = require("./model");
+const Artwork = require("./model");
 
-const artistsControllers = {
-  // GET ALL ARTISTS
+const artworksControllers = {
   getAll: async (req, res) => {
-    const artists = await Artist.find();
+    const artworks = await Artwork.find();
 
     res.status(200).send({
-      message: "Get all artists",
-      artists,
+      message: "Get all artworks",
+      artworks,
     });
   },
 
   add: async (req, res) => {
     try {
-      const newArtist = {
+      const newArtwork = {
         ...req.body,
         slug: req.body.name.split(" ").join("-").toLowerCase(),
       };
 
-      const artist = await Artist.create(newArtist);
+      const artwork = await Artwork.create(newArtwork);
 
       res.status(200).send({
-        message: "Add artist",
-        artist,
+        message: "Add artwork",
+        artwork,
       });
     } catch (error) {
       res.status(400).send({
@@ -33,9 +32,9 @@ const artistsControllers = {
 
   deleteAll: async (req, res) => {
     try {
-      await Artist.deleteMany();
+      await Artwork.deleteMany();
       res.status(200).send({
-        message: "Deleted all artists",
+        message: "Deleted all artworks",
       });
     } catch (error) {
       res.status(400).send({
@@ -48,10 +47,10 @@ const artistsControllers = {
     try {
       const slug = req.params.slug;
 
-      const artist = await Artist.findOne({ slug });
+      const artwork = await Artwork.findOne({ slug });
 
       res.status(200).send({
-        artist,
+        artwork,
       });
     } catch (error) {
       res.status(400).send({
@@ -62,7 +61,7 @@ const artistsControllers = {
   deleteOneBySlug: async (req, res) => {
     try {
       const slug = req.params.slug;
-      const result = await Artist.deleteOne({ slug });
+      const result = await Artwork.deleteOne({ slug });
       res.status(200).send({
         result,
       });
@@ -74,4 +73,4 @@ const artistsControllers = {
   },
 };
 
-module.exports = artistsControllers;
+module.exports = artworksControllers;
