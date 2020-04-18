@@ -71,17 +71,15 @@ Swagger URL: https://api.haidar.dev/docs
 | `/users/:id`          | `GET`    | Get one user by id             |
 | `/users/:id`          | `DELETE` | Delete one user by id          |
 
-
 ### Artists
 
-| Endpoint         | HTTP     | Description           |
-| ---------------- | -------- | --------------------- |
-| `/artists`       | `GET`    | Get all artists       |
-| `/artists`       | `POST`   | Add new artist        |
-| `/artists`       | `DELETE` | Delete all artists    |
-| `/artists/:slug` | `GET`    | Get artist by slug    |
-| `/artists/:slug` | `DELETE` | Delete artist by slug |
-
+| Endpoint         | HTTP     | Description           | isAuthenticated? |
+| ---------------- | -------- | --------------------- | ---------------- |
+| `/artists`       | `GET`    | Get all artists       | -                |
+| `/artists`       | `POST`   | Add new artist        | Yes              |
+| `/artists`       | `DELETE` | Delete all artists    | Yes              |
+| `/artists/:slug` | `GET`    | Get artist by slug    | -                |
+| `/artists/:slug` | `DELETE` | Delete artist by slug | Yes              |
 
 ```json
 {
@@ -112,7 +110,6 @@ Swagger URL: https://api.haidar.dev/docs
 | `/artworks/:slug` | `GET`    | Get artwork by slug    |
 | `/artworks/:slug` | `DELETE` | Delete artwork by slug |
 
-
 ```json
 {
   "artist": ObjectId,
@@ -121,7 +118,6 @@ Swagger URL: https://api.haidar.dev/docs
   "image": "https://example.com/images/let-it-grow.jpg"
 }
 ```
-
 
 ### Stories
 
@@ -133,7 +129,6 @@ Swagger URL: https://api.haidar.dev/docs
 | `/stories`       | `DELETE` | Delete all stories   |
 | `/stories/:slug` | `GET`    | Get story by slug    |
 | `/stories/:slug` | `DELETE` | Delete story by slug |
-
 
 ```json
 {
