@@ -122,6 +122,29 @@ Swagger URL: https://api.haidar.dev/docs
 }
 ```
 
+
+### Stories
+
+| Endpoint         | HTTP     | Description          |
+| ---------------- | -------- | -------------------- |
+| `/stories/seed`  | `POST`   | Seed initial stories |
+| `/stories`       | `GET`    | Get all stories      |
+| `/stories`       | `POST`   | Add new story        |
+| `/stories`       | `DELETE` | Delete all stories   |
+| `/stories/:slug` | `GET`    | Get story by slug    |
+| `/stories/:slug` | `DELETE` | Delete story by slug |
+
+
+```json
+{
+  "slug": "rangoon-rhythm:-eillie",
+  "title": "Rangoon Rhythm: EilliE",
+  "date": "April 17, 2020",
+  "image": "https://www.myanmore.com/wp-content/uploads/2020/03/eillie-2-1068x712.jpg",
+  "content": "<p>EilliE started her music career in late 2018 when she was 18.</p><p> The girl has already become a favourite rapper for the local rap music industry.With her powerful rapping skills and distinctive fashion style, she talked about her passion for music and balance between life and career. EilliE, with the given name of Eaint Thet Hmu, joined BG18 Record Label in 2018. It all started at the 2018 Invasion Music Festival. “I was hanging out with my friends and also a bit drunk at that time.” she laughed.</p>"
+}
+```
+
 ## Scripts
 
 ### Setup Environment Variables

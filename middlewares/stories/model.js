@@ -16,7 +16,7 @@ const StorySchema = Schema(
       max: [100, "Title is too long"],
     },
     date: {
-      type: String,
+      type: Date,
       required: [true, "Date is required"],
     },
     image: {
