@@ -13,6 +13,7 @@ const indexMiddleware = require("./middlewares/index");
 const usersMiddleware = require("./middlewares/users/index");
 const artistsMiddleware = require("./middlewares/artists/index");
 const artworksMiddleware = require("./middlewares/artworks/index");
+const storiesMiddleware = require("./middlewares/stories/index");
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use("/", indexMiddleware);
 app.use("/users", usersMiddleware);
 app.use("/artists", artistsMiddleware);
 app.use("/artworks", artworksMiddleware);
+app.use("/stories", storiesMiddleware);
 
 const swaggerDocument = YAML.load("./docs/swagger.yaml");
 app.use(
