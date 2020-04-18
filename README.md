@@ -105,6 +105,7 @@ Swagger URL: https://api.haidar.dev/docs
 
 | Endpoint          | HTTP     | Description            |
 | ----------------- | -------- | ---------------------- |
+| `/artworks/seed`  | `POST`   | Seed initial artworks  |
 | `/artworks`       | `GET`    | Get all artworks       |
 | `/artworks`       | `POST`   | Add new artwork        |
 | `/artworks`       | `DELETE` | Delete all artworks    |
