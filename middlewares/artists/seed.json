@@ -1,82 +1,103 @@
 [
   {
-    "name": "",
-    "photo": "",
+    "name": "Tin Maung Oo",
+    "photo": "https://nawaart.jonathannicolas.dev/artists/tin-maung-oo.jpg",
     "biography": {
-      "about": "",
-      "exhibitions": [""]
+      "about": "Tin Maung Oo grew up with his decent father and artistic mother. He started painting in 1972 and studied under Ko Bogie, Ko Myint Hsan and U Ko Oung Thame",
+      "exhibitions": [
+        "2014-Tin Maung oO's Solo Art Show,Suvannabhumi Art Gallery,Chiang Mai,Thailand",
+        "2011-The 5th Exhbiiton of New EXpression of Asian Art,The National Gallery,Thailand"
+      ]
     }
   },
   {
-    "name": "",
-    "photo": "",
+    "name": "Min Zayar Oo",
+    "photo": "https://nawaart.jonathannicolas.dev/artists/min-zayar-oo.jpg",
     "biography": {
-      "about": "",
-      "exhibitions": [""]
+      "about": "Min studied under U Kyaw Thu Yein, U Maung Oo, U Than Kywe, U Win Tint, U Win Pe Myint, U M.T.Oung",
+      "exhibitions": [
+        "2015-Apples in Colors, First Solo Art Exhibition",
+        "2017-Dream Colour Coding, Second Solo Art Exhibition"
+      ]
     }
   },
   {
-    "name": "",
-    "photo": "",
+    "name": "Kyee Myintt Saw",
+    "photo": "https://nawaart.jonathannicolas.dev/artists/kyee-myint-saw.jpg",
     "biography": {
-      "about": "",
-      "exhibitions": [""]
+      "about": "Kyee born 1939 in Yangon, Myanmar, 1966 Obtained Bachelor of Science degree majoring in Mathematics, 1990 Obtained Master of Science Degree Professional Career",
+      "exhibitions": [
+        "2012 Monsoon Special, Mid-Yearly Art Show, Trish Gallery, Yangon",
+        "2011 Shwedagone Exhibition, Myanmar Art Center, Sedona Hotel, Yangon"
+      ]
     }
   },
   {
-    "name": "",
-    "photo": "",
+    "name": "Byardate",
+    "photo": "https://nawaart.jonathannicolas.dev/artists/byardate.jpg",
     "biography": {
-      "about": "",
-      "exhibitions": [""]
+      "about": "Byardate studied under U Tin Hla Win(father), U Aye Myint(Researcher), U Pyi Kyaw Han, Mr.YuKiWon(Korea), Mr.Jhon Feil(Korea)",
+      "exhibitions": [
+        "2016-Best Painting of the year Art Exhibition Participated in (30) Groups Show Art Exhibition in",
+        "2017-Fifth Solo Art Exhibition(HongKong)"
+      ]
     }
   },
   {
-    "name": "",
-    "photo": "",
+    "name": "Aung Kyaw Hein",
+    "photo": "https://nawaart.jonathannicolas.dev/artists/aung-kyaw-hein.jpg",
     "biography": {
-      "about": "",
-      "exhibitions": [""]
+      "about": "Studied under U Shwe Daung (father), U Kyaw Thu Rein, U Kyaw Than U Win Pe Myint, U Shwe Myint, U Ye Myint, U Zaw Thant(designer)",
+      "exhibitions": [
+        "2013-Art13 Art Exhibition",
+        "2010-La Yeik Pan Pwint 4th Art Exhibition"
+      ]
     }
   },
   {
-    "name": "",
-    "photo": "",
+    "name": "Dawei Tu Tu",
+    "photo": "https://nawaart.jonathannicolas.dev/artists/dawei-tu-tu.jpg",
     "biography": {
-      "about": "",
-      "exhibitions": [""]
+      "about": "Dawei Tu Tu is born in the town of Dawei, about 600km away from Yangon. He first studied art under Tin Latt and Kyaw Wai who both lived in Dawei. At the age of 21, he moved to Yangon to further his artistic study. He enjoys the process of creation and likes exploring different styles in his work, using both oil and acrylic. He won the Best Painting of the Year Award by Tun Foundation three times and was a finalist in the 2011 Myanmar National Portrait Competition. He has exhibited in England, Kuwait, Thailand and Singapore.",
+      "exhibitions": [
+        "2016- Special Prize (Best Paintings of the year 2016)",
+        "2011- Gold Prize (Best Paintings of the year 2011)"
+      ]
     }
   },
   {
-    "name": "",
-    "photo": "",
+    "name": "Thit Nay Sann",
+    "photo": "https://nawaart.jonathannicolas.dev/artists/thit-nay-sann.jpg",
     "biography": {
-      "about": "",
-      "exhibitions": [""]
+      "about": "Thit Nay San’s signature work is his paintings of Thanaka girls. Thanaka, a yellow cosmetic paste made from ground bark, is applied on the cheeks and foreheads of children and women. In his paintings, Thit Nay San aims to capture this distinctive feature of the Myanmar culture. Thit studied under U Mg Khae, Star U Mya Than, U Sein Myint, U Nandar Hlaing",
+      "exhibitions": [
+        "Myanmar's Image First Solor Art Exhibition",
+        "The 3rd Contest of the Contemporany Art in the Mekhong River Basin(2014)Thailand Burma by Proxy Art at the down of Democtacy Hongkong Visual Arts Center"
+      ]
     }
   },
   {
-    "name": "",
-    "photo": "",
+    "name": "Thu Rain Win",
+    "photo": "https://nawaart.jonathannicolas.dev/artists/thu-rain-win.jpg",
     "biography": {
-      "about": "",
-      "exhibitions": [""]
+      "about": "Thu Rain Win is inspired by nature and focuses mainly on landscape paintings. Thu studied under Ko Shan,Myint Than, U Naing Win",
+      "exhibitions": [
+        "2013-Art 13 Myanmar Art Exhibition",
+        "2015-Best Painting of the year Art Exhibition",
+        "See Zar Yeik Donation Art Exhibition"
+      ]
     }
   },
   {
-    "name": "",
-    "photo": "",
+    "name": "Lu Yaung Saung",
+    "photo": "https://nawaart.jonathannicolas.dev/artists/lu-yaung-saung.jpg",
     "biography": {
-      "about": "",
-      "exhibitions": [""]
-    }
-  },
-  {
-    "name": "",
-    "photo": "",
-    "biography": {
-      "about": "",
-      "exhibitions": [""]
+      "about": "Lu Yaung Saung studied art under a Korean artist Mr Yuki Won. With oil as his preferred medium, his modern impressionist paintings of cityscapes and old buildings in Yangon are sublime and atmospheric. He has participated in more than 20 group shows and 3 solo art exhibitions in Myanmar.",
+      "exhibitions": [
+        "2015- Best Paintings of the year Art Exhibition",
+        "2017- NLD HIV/AIDS Center Donation Art Exhibiton",
+        "2017- PCK Art Exhibition (Novotel Hotel)"
+      ]
     }
   }
 ]
