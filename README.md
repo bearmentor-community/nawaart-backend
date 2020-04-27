@@ -80,6 +80,8 @@ Swagger URL: https://api.haidar.dev/docs
 | `/artists`       | `DELETE` | Delete all artists    | Yes              |
 | `/artists/:slug` | `GET`    | Get artist by slug    | -                |
 | `/artists/:slug` | `DELETE` | Delete artist by slug | Yes              |
+| `/artists/seed`  | `POST`   | Seed initial artists  | -                |
+
 
 ```json
 {

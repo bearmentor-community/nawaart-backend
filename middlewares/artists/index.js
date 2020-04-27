@@ -9,5 +9,6 @@ router.post("/", auth.isAuthenticated, artists.add);
 router.delete("/", auth.isAuthenticated, artists.deleteAll);
 router.get("/:slug", artists.getOneBySlug);
 router.delete("/:slug", auth.isAuthenticated, artists.deleteOneBySlug);
+router.post("/seed", artists.seed);
 
 module.exports = router;

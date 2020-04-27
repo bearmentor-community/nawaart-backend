@@ -1,6 +1,34 @@
 const Artist = require("./model");
+const artistsSeed = require("./seed.json");
 
 const artistsControllers = {
+  seed: async (req, res) => {
+    try {
+      await Artist.deleteMany();
+
+      artistsSeed.forEach(async (artist) => {
+        try {
+          const newArtist = {
+            ...artist,
+            slug: artist.name.split(" ").join("-").toLowerCase(),
+          };
+          await Artist.create(newArtist);
+        } catch (error) {
+          res.status(201).send({
+            message: "Seed artists process failed",
+          });
+        }
+      });
+
+      res.status(201).send({
+        message: "Seed artists completed",
+      });
+    } catch (error) {
+      res.status(500).send({
+        message: "Seed artists failed",
+      });
+    }
+  },
   getAll: async (req, res) => {
     const artists = await Artist.find();
 
