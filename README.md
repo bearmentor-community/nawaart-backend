@@ -5,13 +5,9 @@
 
 ## Links
 
-- Heroku: https://nawaart-backend.herokuapp.com
-  - Dashboard: https://dashboard.heroku.com/apps/nawaart-backend
+- Heroku: https://nawaart.herokuapp.com
+  - Dashboard: https://dashboard.heroku.com/apps/nawaart
   - MongoDB: mongodb://mlab.com/database-url
-- Amazon EBS: https://api-haidar-dev.example.com
-  - MongoDB: mongodb://mlab.com/database-url
-- Amazon EC2: https://api-haidar-dev.example.com
-  - MongoDB: mongodb://amazon.com/database-url
 
 ## Stack
 
