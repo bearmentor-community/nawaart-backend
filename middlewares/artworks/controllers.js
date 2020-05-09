@@ -105,7 +105,10 @@ const artworksControllers = {
     try {
       const slug = req.params.slug;
 
-      const artwork = await Artwork.findOne({ slug });
+      const artwork = await Artwork.findOne({ slug }).populate({
+        path: "artist",
+        select: "name slug photo -_id",
+      });
 
       res.status(200).send({
         artwork,
@@ -116,6 +119,7 @@ const artworksControllers = {
       });
     }
   },
+
   deleteOneBySlug: async (req, res) => {
     try {
       const slug = req.params.slug;

@@ -7,6 +7,7 @@ const ArtworkSchema = Schema(
   {
     artist: {
       type: mongoose.Types.ObjectId,
+      ref: "Artist",
       required: [true, "Artist's _id is required"],
     },
     slug: {

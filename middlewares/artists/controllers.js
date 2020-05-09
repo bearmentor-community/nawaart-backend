@@ -29,6 +29,7 @@ const artistsControllers = {
       });
     }
   },
+
   getAll: async (req, res) => {
     const artists = await Artist.find();
 
