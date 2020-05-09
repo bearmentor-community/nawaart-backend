@@ -10,17 +10,39 @@ const artworksControllers = {
       artworksSeed.forEach(async (artwork) => {
         try {
           const artist = await Artist.findOne({ slug: artwork.artistSlug });
-          const artistId = artist._id; // ObjectId
 
           const newArtwork = {
             ...artwork,
-            artist: artistId,
+            artist: artist._id,
             slug: artwork.title.split(" ").join("-").toLowerCase(),
           };
 
-          await Artwork.create(newArtwork);
+          try {
+            // Create the artwork first so we can get the artwork._id
+            // We cannot use await Artwork.create(newArtwork)
+            const artwork = new Artwork(newArtwork);
+            await artwork.save();
+
+            try {
+              // Then we do Artist.artworks.push(artwork._id)
+              await Artist.findByIdAndUpdate(
+                artist._id, // finding the artist id first
+                { $push: { artworks: artwork._id } } // then push the artwork id into artworks property
+              );
+            } catch (error) {
+              res.status(500).send({
+                message: "Seed artworks when updating Artist.artworks failed",
+              });
+              console.error(error);
+            }
+          } catch (error) {
+            res.status(500).send({
+              message: "Seed artworks when adding new artwork failed",
+            });
+            console.error(error);
+          }
         } catch (error) {
-          res.status(201).send({
+          res.status(500).send({
             message: "Seed artworks process failed",
           });
         }
