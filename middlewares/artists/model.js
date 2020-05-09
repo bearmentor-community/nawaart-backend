@@ -29,6 +29,12 @@ const ArtistSchema = Schema(
         required: [true, "Exhibitions are required"],
       },
     },
+    artworks: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "Artwork",
+      },
+    ],
   },
   {
     timestamps: true,
