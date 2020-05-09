@@ -7,16 +7,17 @@ const artworksControllers = {
     try {
       await Artwork.deleteMany();
 
-      const firstArtist = await Artist.findOne({});
-      const artistId = firstArtist._id;
-
       artworksSeed.forEach(async (artwork) => {
         try {
+          const artist = await Artist.findOne({ slug: artwork.artistSlug });
+          const artistId = artist._id; // ObjectId
+
           const newArtwork = {
             ...artwork,
             artist: artistId,
             slug: artwork.title.split(" ").join("-").toLowerCase(),
           };
+
           await Artwork.create(newArtwork);
         } catch (error) {
           res.status(201).send({
@@ -25,6 +26,7 @@ const artworksControllers = {
         }
       });
 
+      // Do this after all the forEach loop finished
       res.status(201).send({
         message: "Seed artworks completed",
       });
