@@ -4,13 +4,6 @@ const router = express.Router()
 const users = require('./controllers')
 const auth = require('../auth/controllers')
 
-/**
- * @swagger
- * tags:
- *   name: Users
- *   description: User management
- */
-
 ////////////////////////////////////////////////////////////////////////////////
 // (POST) Register new user
 router.post('/register', auth.isUserExist, users.register)

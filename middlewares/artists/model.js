@@ -15,7 +15,7 @@ const ArtistSchema = Schema(
       min: [2, "Name is too short"],
       max: [100, "Name is too long"],
     },
-    photo: {
+    photoUrl: {
       type: String,
       required: [true, "Photo is required"],
     },

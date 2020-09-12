@@ -10,6 +10,7 @@ const artistsControllers = {
         try {
           const newArtist = {
             ...artist,
+            photoUrl: process.env.API_URL + artist.photoUrl,
             slug: artist.name.split(" ").join("-").toLowerCase(),
           };
           await Artist.create(newArtist);

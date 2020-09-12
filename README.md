@@ -1,16 +1,10 @@
 # Nawaart Backend
 
-- Visit the live API: https://nawaart-api.jonathannicolas.dev
-- Visit the live documentation: https://nawaart-api.jonathannicolas.dev/docs
-
-## Links
-
-- Heroku: https://nawaart.herokuapp.com
-  - Dashboard: https://dashboard.heroku.com/apps/nawaart
-  - MongoDB: mongodb://mlab.com/database-url
+Visit the live production API: https://nawaart-api.jonathannicolas.dev
 
 ## Stack
 
+- Node.js
 - REST API
 - Express
   - Body Parser
@@ -21,31 +15,11 @@
 - Morgan
 - Postman
 - Swagger
-- MongoDB, Mongoose, and mLab
-  - Later: MySQL, Sequelize, and MySQL instance
-- Heroku
-  - Later: Amazon EBS and Amazon EC2
-  - Later: Google App Engine
+- MongoDB and Mongoose
+- Amazon EC2
+- Circle CI and Docker
 - Cloudflare
 - Uniregistry
-
-## Features
-
-- Seed new users
-- Register new user
-  - Name
-  - Email
-  - Password encrypted using bcrypt
-- Login to existing user
-  - Email
-  - Password
-  - Authorization token with JWT
-- Get all users
-  - Don't show the password
-- Get user by id
-  - Don't show the password
-- Search users by name
-- Remove all users
 
 ## REST API Specification
 
@@ -77,7 +51,6 @@ Swagger URL: https://api.haidar.dev/docs
 | `/artists/:slug` | `GET`    | Get artist by slug    | -                |
 | `/artists/:slug` | `DELETE` | Delete artist by slug | Yes              |
 | `/artists/seed`  | `POST`   | Seed initial artists  | -                |
-
 
 ```json
 {

@@ -1,13 +1,10 @@
 require("dotenv").config();
 
-const express = require("express");
 const path = require("path");
+const express = require("express");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
-
-const swaggerUi = require("swagger-ui-express");
-const YAML = require("yamljs");
 
 const indexMiddleware = require("./middlewares/index");
 const usersMiddleware = require("./middlewares/users/index");
@@ -22,6 +19,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexMiddleware);
 app.use("/users", usersMiddleware);
@@ -29,19 +27,7 @@ app.use("/artists", artistsMiddleware);
 app.use("/artworks", artworksMiddleware);
 app.use("/stories", storiesMiddleware);
 
-const swaggerDocument = YAML.load("./docs/swagger.yaml");
-app.use(
-  "/docs",
-  (req, res, next) => {
-    swaggerDocument.host = req.get("host");
-    req.swaggerDoc = swaggerDocument;
-    next();
-  },
-  swaggerUi.serve,
-  swaggerUi.setup()
-);
-
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
   res.status(err.status || 500).send({
