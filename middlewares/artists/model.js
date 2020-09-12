@@ -17,7 +17,7 @@ const ArtistSchema = Schema(
     },
     photoUrl: {
       type: String,
-      required: [true, "Photo is required"],
+      required: [true, "Photo URL is required"],
     },
     biography: {
       about: {

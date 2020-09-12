@@ -6,48 +6,43 @@ const artworksControllers = {
   seed: async (req, res) => {
     try {
       artworksSeed.forEach(async (artwork) => {
-        try {
-          const artist = await Artist.findOne({ slug: artwork.artistSlug });
+        const artist = await Artist.findOne({ slug: artwork.artistSlug });
 
-          if (!artist) {
-            console.info("There is no artist");
-            res.status(500).send({
-              message: "Seed artworks failed because artist is not found",
-            });
-          } else {
-            const newArtwork = {
-              ...artwork,
-              artist: artist._id,
-              slug: artwork.title.split(" ").join("-").toLowerCase(),
-            };
+        if (!artist) {
+          console.info("There is no artist");
+          res.status(500).send({
+            message: "Seed artworks failed because artist is not found",
+          });
+        } else {
+          const newArtwork = {
+            ...artwork,
+            artist: artist._id,
+            imageUrl: process.env.API_URL + artwork.imageUrl,
+            slug: artwork.title.split(" ").join("-").toLowerCase(),
+          };
+
+          try {
+            // Create the artwork first so we can get the artwork._id
+            // We cannot use await Artwork.create(newArtwork)
+            const artwork = new Artwork(newArtwork);
+            await artwork.save();
 
             try {
-              // Create the artwork first so we can get the artwork._id
-              // We cannot use await Artwork.create(newArtwork)
-              const artwork = new Artwork(newArtwork);
-              await artwork.save();
-
-              try {
-                // Then we do Artist.artworks.push(artwork._id)
-                await Artist.findByIdAndUpdate(
-                  artist._id, // finding the artist id first
-                  { $push: { artworks: artwork._id } } // then push the artwork id into artworks property
-                );
-              } catch (error) {
-                res.status(500).send({
-                  message: "Seed artworks when updating Artist.artworks failed",
-                });
-              }
+              // Then we do Artist.artworks.push(artwork._id)
+              await Artist.findByIdAndUpdate(
+                artist._id, // finding the artist id first
+                { $push: { artworks: artwork._id } } // then push the artwork id into artworks property
+              );
             } catch (error) {
               res.status(500).send({
-                message: "Seed artworks when adding new artwork failed",
+                message: "Seed artworks when updating Artist.artworks failed",
               });
             }
+          } catch (error) {
+            res.status(500).send({
+              message: "Seed artworks when adding new artwork failed",
+            });
           }
-        } catch (error) {
-          res.status(500).send({
-            message: "Seed artworks process failed",
-          });
         }
       });
 

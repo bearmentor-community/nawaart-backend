@@ -1,6 +1,9 @@
+### Get all artworks
+GET http://localhost:8000/artworks
+
 ### Seed artworks
 POST http://localhost:8000/artworks/seed
 
-### Get all artworks
-GET http://localhost:8000/artworks
+### Delete all artworks
+DELETE http://localhost:8000/artworks
 

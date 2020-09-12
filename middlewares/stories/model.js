@@ -19,9 +19,9 @@ const StorySchema = Schema(
       type: Date,
       required: [true, "Date is required"],
     },
-    image: {
+    imageUrl: {
       type: String,
-      required: [true, "Image is required"],
+      required: [true, "Image URL is required"],
     },
     content: {
       type: String,

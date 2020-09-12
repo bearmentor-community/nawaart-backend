@@ -4,12 +4,11 @@ const storiesSeed = require("./seed.json");
 const storiesControllers = {
   seed: async (req, res) => {
     try {
-      await Story.deleteMany();
-
       storiesSeed.forEach(async (story) => {
         try {
           const newStory = {
             ...story,
+            imageUrl: process.env.API_URL + story.imageUrl,
             slug: story.title.split(" ").join("-").toLowerCase(),
           };
           await Story.create(newStory);

@@ -20,9 +20,9 @@ const ArtworkSchema = Schema(
       min: [2, "Title is too short"],
       max: [100, "Title is too long"],
     },
-    image: {
+    imageUrl: {
       type: String,
-      required: [true, "Image is required"],
+      required: [true, "Image URL is required"],
     },
   },
   {
