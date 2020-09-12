@@ -9,7 +9,7 @@ const storiesControllers = {
           const newStory = {
             ...story,
             imageUrl: process.env.API_URL + story.imageUrl,
-            slug: story.title.split(" ").join("-").toLowerCase(),
+            slug: story.slug || story.title.split(" ").join("-").toLowerCase(),
           };
           await Story.create(newStory);
         } catch (error) {
