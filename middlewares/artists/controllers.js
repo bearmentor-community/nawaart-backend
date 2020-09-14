@@ -44,6 +44,11 @@ const artistsControllers = {
     try {
       const newArtist = {
         ...req.body,
+        biography: {
+          about: req.body.about,
+          exhibitions: req.body.exhibitions,
+        },
+        photoUrl: `${process.env.API_URL}/uploads/${req.file.filename}`,
         slug: req.body.name.split(" ").join("-").toLowerCase(),
       };
 
