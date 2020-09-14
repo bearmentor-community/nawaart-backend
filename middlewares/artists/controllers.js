@@ -43,13 +43,13 @@ const artistsControllers = {
   add: async (req, res) => {
     try {
       const newArtist = {
-        ...req.body,
+        slug: req.body.name.split(" ").join("-").toLowerCase(),
+        name: req.body.name,
+        photoUrl: `${process.env.API_URL}/uploads/${req.file.filename}`,
         biography: {
           about: req.body.about,
-          exhibitions: req.body.exhibitions,
+          exhibitions: JSON.parse(req.body.exhibitions),
         },
-        photoUrl: `${process.env.API_URL}/uploads/${req.file.filename}`,
-        slug: req.body.name.split(" ").join("-").toLowerCase(),
       };
 
       console.log(newArtist);

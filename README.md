@@ -14,7 +14,6 @@ Visit the live production API: https://nawaart-api.jonathannicolas.dev
 - Debug
 - Morgan
 - Postman
-- Swagger
 - MongoDB and Mongoose
 - Amazon EC2
 - Circle CI and Docker
@@ -22,8 +21,6 @@ Visit the live production API: https://nawaart-api.jonathannicolas.dev
 - Uniregistry
 
 ## REST API Specification
-
-Swagger URL: https://api.haidar.dev/docs
 
 ### Users
 
@@ -167,10 +164,6 @@ yarn test
 ```sh
 heroku logs --tail -a api-haidar-dev
 ```
-
-## References
-
-- [Swagger: Time to document that Express API you built!](https://levelup.gitconnected.com/swagger-time-to-document-that-express-api-you-built-9b8faaeae563)
 
 ## License
 
