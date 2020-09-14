@@ -3,3 +3,6 @@ GET http://localhost:8000/artists
 
 ### Seed artists
 POST http://localhost:8000/artists/seed
+
+### Delete all artists
+DELETE http://localhost:8000/artists

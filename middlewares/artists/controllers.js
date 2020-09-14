@@ -47,6 +47,8 @@ const artistsControllers = {
         slug: req.body.name.split(" ").join("-").toLowerCase(),
       };
 
+      console.log(newArtist);
+
       const artist = await Artist.create(newArtist);
 
       res.status(200).send({
