@@ -67,7 +67,6 @@ const artworksControllers = {
   },
 
   add: async (req, res) => {
-    console.log(req.body);
     try {
       const newArtwork = {
         title: req.body.title,
@@ -76,7 +75,6 @@ const artworksControllers = {
         imageUrl: `${process.env.API_URL}/uploads/${req.file.filename}`,
       };
 
-      console.log(newArtwork);
       const artwork = await Artwork.create(newArtwork);
 
       res.status(200).send({
