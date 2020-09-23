@@ -55,7 +55,7 @@ Visit the live production API: https://nawaart-api.jonathannicolas.dev
   "id": 1,
   "slug": "adha-joe",
   "name": "Adha Joe",
-  "photo": "https://example.com/images/adha-joe.jpg",
+  "photoUrl": "https://example.com/images/adha-joe.jpg",
   "biography": {
     "about": "Even Adha is an autodidact artist and has never joined any art institution, he has been interested with art and started to paint since he was very young. In the beginning, Adha started to learn many kind of arts in various media, then finally he decided to focus on painting. For Adha, to paint is to express himself, as for him arts is the bridge to communicate to the audiences.",
     "exhibitions": [
