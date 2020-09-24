@@ -28,11 +28,13 @@ app.use("/artworks", artworksMiddleware);
 app.use("/stories", storiesMiddleware);
 
 app.use((err, req, res) => {
-  res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
-  res.status(err.status || 500).send({
-    error: err,
-  });
+  if (err.message) {
+    res.locals.message = err.message;
+    res.locals.error = req.app.get("env") === "development" ? err : {};
+    res.status(err.status || 500).send({
+      error: err,
+    });
+  }
 });
 
 module.exports = app;
