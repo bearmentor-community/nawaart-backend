@@ -24,6 +24,17 @@ const ArtworkSchema = Schema(
       type: String,
       required: [true, "Image URL is required"],
     },
+    year: {
+      type: Number,
+      required: [true, "Year is required"],
+    },
+    dimensions: {
+      type: String,
+    },
+    country: {
+      type: String,
+      required: [true, "Country is required"],
+    },
   },
   {
     timestamps: true,

@@ -73,6 +73,9 @@ const artworksControllers = {
         slug: req.body.title.split(" ").join("-").toLowerCase(),
         artist: req.body.artistId,
         imageUrl: `${process.env.API_URL}/uploads/${req.file.filename}`,
+        year: req.body.year,
+        dimensions: req.body.dimensions,
+        country: req.body.country,
       };
 
       const artwork = await Artwork.create(newArtwork);
