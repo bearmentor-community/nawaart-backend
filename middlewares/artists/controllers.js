@@ -86,7 +86,7 @@ const artistsControllers = {
 
       const artist = await Artist.findOne({ slug }).populate({
         path: "artworks",
-        select: "title slug image -_id",
+        select: "title slug imageUrl -_id",
       });
 
       res.status(200).send({

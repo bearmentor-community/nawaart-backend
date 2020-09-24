@@ -77,6 +77,11 @@ const artworksControllers = {
 
       const artwork = await Artwork.create(newArtwork);
 
+      await Artist.findByIdAndUpdate(
+        req.body.artistId, // finding the artist id first
+        { $push: { artworks: artwork._id } } // then push the artwork id into artworks property
+      );
+
       res.status(200).send({
         message: "Add artwork",
         artwork,
