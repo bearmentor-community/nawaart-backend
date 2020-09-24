@@ -132,8 +132,11 @@ const artworksControllers = {
   deleteOneBySlug: async (req, res) => {
     try {
       const slug = req.params.slug;
+
       const result = await Artwork.deleteOne({ slug });
+
       res.status(200).send({
+        message: "Deleted one artwork by slug",
         result,
       });
     } catch (error) {
