@@ -1,5 +1,6 @@
 const mongoose = require("../../config/mongoose");
 const AutoIncrement = require("mongoose-sequence")(mongoose);
+const uniqueValidator = require("mongoose-unique-validator");
 const Schema = mongoose.Schema;
 
 // Artwork schema
@@ -13,12 +14,14 @@ const ArtworkSchema = Schema(
     slug: {
       type: String,
       required: [true, "Slug is required"],
+      unique: true,
     },
     title: {
       type: String,
       required: [true, "Title is required"],
       min: [2, "Title is too short"],
       max: [100, "Title is too long"],
+      unique: true,
     },
     imageUrl: {
       type: String,
@@ -45,6 +48,8 @@ ArtworkSchema.plugin(AutoIncrement, {
   id: "artworks_counter",
   inc_field: "id",
 });
+
+ArtworkSchema.plugin(uniqueValidator);
 
 const Artwork = mongoose.model("Artwork", ArtworkSchema);
 
