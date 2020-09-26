@@ -89,6 +89,7 @@ const artistsControllers = {
         path: "artworks",
         select: "title slug imageUrl -_id",
       });
+      if (!artist) throw new Error("No artist found");
 
       res.status(200).send({
         artist,

@@ -76,16 +76,18 @@ const storiesControllers = {
       const slug = req.params.slug;
 
       const story = await Story.findOne({ slug });
+      if (!story) throw new Error("No story found");
 
       res.status(200).send({
         story,
       });
     } catch (error) {
-      res.status(400).send({
+      res.status(404).send({
         error,
       });
     }
   },
+
   deleteOneBySlug: async (req, res) => {
     try {
       const slug = req.params.slug;
