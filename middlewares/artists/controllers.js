@@ -1,4 +1,5 @@
 const Artist = require("./model");
+const Artwork = require("../artworks/model");
 const artistsSeed = require("./seed.json");
 
 const artistsControllers = {
@@ -102,9 +103,19 @@ const artistsControllers = {
   deleteOneBySlug: async (req, res) => {
     try {
       const slug = req.params.slug;
-      const result = await Artist.deleteOne({ slug });
+
+      const artist = await Artist.findOne({ slug });
+
+      const resultDeleteArtworks = await Artwork.deleteMany({
+        _id: {
+          $in: artist.artworks,
+        },
+      });
+
+      const resultDeleteArtist = await Artist.deleteOne({ slug });
       res.status(200).send({
-        result,
+        resultDeleteArtist,
+        resultDeleteArtworks,
       });
     } catch (error) {
       res.status(400).send({
